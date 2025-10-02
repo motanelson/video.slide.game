@@ -1,5 +1,25 @@
 import time
 print("\033c\033[43;30m\nboard\n")
+def memorys(arrays):
+    ll=False
+    aaa=""
+    for n in arrays:
+        if ll!=False:
+             aaa=aaa+";"
+        
+        ll=True
+        for nn in n:
+             l=False
+             for nnn in nn:
+                 if l:
+                     aaa=aaa+", "+str(nnn)
+                 else:
+                     aaa=aaa+str(nnn)
+                 l=True
+             aaa=aaa+"\n"
+    return aaa
+    
+
 def saves(files,arrays):
     ll=False
     f1=open(files,"w")
@@ -81,4 +101,4 @@ a=mark(aaa,a,"X",8)
 for n in range(8):
     draw(a,n)
     time.sleep(2)
-saves("out.xyt",a)
+#print(memorys(a))
