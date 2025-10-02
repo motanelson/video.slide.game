@@ -1,4 +1,17 @@
 import time
+import zlib
+
+def save_compressed(filename, text):
+    """Compacta a string e guarda no ficheiro com extensão .xytb"""
+    compressed = zlib.compress(text.encode("utf-8"))
+    with open(filename, "wb") as f:
+        f.write(compressed)
+
+def load_compressed(filename):
+    """Carrega o ficheiro .xytb, descompacta e devolve a string"""
+    with open(filename, "rb") as f:
+        compressed = f.read()
+    return zlib.decompress(compressed).decode("utf-8")
 print("\033c\033[43;30m\nboard\n")
 def memorys(arrays):
     ll=False
@@ -101,4 +114,5 @@ a=mark(aaa,a,"X",8)
 for n in range(8):
     draw(a,n)
     time.sleep(2)
-#print(memorys(a))
+save_compressed("saida.xytb", memorys(a))
+
