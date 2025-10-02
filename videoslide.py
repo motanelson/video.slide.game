@@ -115,4 +115,5 @@ for n in range(8):
     draw(a,n)
     time.sleep(2)
 save_compressed("saida.xytb", memorys(a))
-
+texto = load_compressed("saida.xytb")
+print(texto)
