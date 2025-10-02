@@ -1,5 +1,24 @@
 import time
 print("\033c\033[43;30m\nboard\n")
+def saves(files,arrays):
+    ll=False
+    f1=open(files,"w")
+    for n in arrays:
+        if ll!=False:
+             f1.write(";")
+        
+        ll=True
+        for nn in n:
+             l=False
+             for nnn in nn:
+                 if l:
+                     f1.write(", "+str(nnn))
+                 else:
+                     f1.write(str(nnn))
+                 l=True
+             f1.write("\n")
+    f1.close()
+    
 def build(lena,incx,incy):
     x=0
     y=0
@@ -62,3 +81,4 @@ a=mark(aaa,a,"X",8)
 for n in range(8):
     draw(a,n)
     time.sleep(2)
+saves("out.xyt",a)
