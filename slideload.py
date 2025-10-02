@@ -22,7 +22,7 @@ def loads(texts):
                  if b=="":
                      a[t][y][x]=" "
                  else:
-                     a[t][y][x]=xxx[x]
+                     a[t][y][x]=b
     return ti,yi,xi,a  
 def save_compressed(filename, text):
     """Compacta a string e guarda no ficheiro com extensão .xytb"""
